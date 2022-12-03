@@ -16,12 +16,12 @@ app.use(express.static("public"));
 const port = process.env.PORT || 5000;
 dotenv.config({ path: "./config.env" });
 
-const CLIENT_ID =
-  "417557325909-b8g4g04lnif45i3bsuhh3n9k4ejutm5u.apps.googleusercontent.com";
-const CLIENT_SECRET = "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";
-const REDIRECT_URI = "https://developers.google.com/oauthplayground";
-const REFRESH_TOKEN =
-  "1//04Lpz_MvQ1bP2CgYIARAAGAQSNwF-L9IrQOgn_ae6WZJ_3pBiR82DBvXAwWtj1jMjIkljK19nXraQZRpeI57wJ4vFYA4v8MNjsjs";
+const CLIENT_ID = process.env.CLIENT_ID;
+
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const REDIRECT_URI = process.env.REDIRECT_URI;
+const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
+
 const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
   CLIENT_SECRET,
